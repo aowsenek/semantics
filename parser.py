@@ -1,8 +1,9 @@
 import search
 import nltk
 x = True
+newEssay = open("/website/assets/newEssay.txt","w+")
 #x is whether or not we're making sure we use the right form of the word
-with open(raw_input("What is the file name?"),"r") as parseText:
+with open("essay.txt",'r') as parseText:
 	caps = "QWERTYUIOPASDFGHJUIKLZXCVBNM"
 	parseText = list(parseText)
 	for t in range(len(parseText)):
@@ -32,4 +33,4 @@ with open(raw_input("What is the file name?"),"r") as parseText:
 					toRead[i] = toRead[i][:-1]
 			else:
 				toRead[i] = toRead[i][0]
-		print search.toString(toRead, ' ',False)
+		newEssay.write(search.toString(toRead, ' ',False)+'\n')
